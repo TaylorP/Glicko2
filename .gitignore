@@ -26,3 +26,6 @@
 *.exe
 *.out
 *.app
+
+# Specific executables built by make
+glicko_basic
