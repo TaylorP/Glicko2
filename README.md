@@ -57,7 +57,13 @@ A version of `Update` that takes a single opponent and game outcome can also be 
     player2.Apply();
 ```
 
-After calling `Update`, the changes must be applied using the `Glicko::Rating::Apply` method. This is neccessary because updates to multiple `Rating` instances may depend on each other and ratings should be not updated until all outcomes have been processed.
+If a player does not play any games during a rating period, the Glicko-2 document recommends that their rating deviation is updated based on the volatility, as described in Step 6 of the Glicko pdf. This can be achieved using the `Decay` function:
+
+```
+    player.Decay()
+```
+
+After calling `Update` or 'Decay', the changes must be applied using the `Glicko::Rating::Apply` method. This is neccessary because updates to multiple `Rating` instances may depend on each other and ratings should be not updated until all outcomes have been processed.
 
 ```
     player.Apply();
