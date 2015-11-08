@@ -63,7 +63,7 @@ If a player does not play any games during a rating period, the Glicko-2 documen
     player.Decay()
 ```
 
-After calling `Update` or 'Decay', the changes must be applied using the `Glicko::Rating::Apply` method. This is neccessary because updates to multiple `Rating` instances may depend on each other and ratings should be not updated until all outcomes have been processed.
+After calling `Update` or `Decay`, the changes must be applied using the `Glicko::Rating::Apply` method. This is neccessary because updates to multiple `Rating` instances may depend on each other and ratings should be not updated until all outcomes have been processed.
 
 ```
     player.Apply();
